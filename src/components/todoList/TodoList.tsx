@@ -13,20 +13,24 @@ import {
   deleteDoc,
 } from 'firebase/firestore';
 
+
+type todoType ={
+  completed:boolean,
+  deadline:number,
+  description:string,
+  id: string;
+  isEdit: boolean,
+  title: string
+}
+
+
 const TodoList: React.FC = () => {
   const classes = styles();
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<todoType[]>([]);
 
   const nowDate = new Date();
 
-  type todoType ={
-    completed:boolean,
-    deadline:number,
-    description:string,
-    id: string;
-    isEdit: boolean,
-    title: string
-  }
+  
 
 
   useEffect(() => {

@@ -5,20 +5,20 @@ import db from '../../firebase/firebase';
 import { collection, addDoc } from 'firebase/firestore';
 
 const TaskInput: React.ElementType<{
-  id?: string;
-  title?: string;
-  description?: string;
-  status?: boolean;
-  deadline?: string;
+  id: string;
+  title: string;
+  description: string;
+  status: boolean;
+  deadline: string;
   nowData: Date;
 }> = ({ id, title, description, status, deadline, nowData }) => {
   const classes = styles();
 
   const todayDateFormated = dayjs(nowData).format('YYYY-MM-DD');
 
-  const [editableTitle, setEditableTitle] = useState(title);
-  const [editableDescription, setEditableDescription] = useState(description);
-  const [editableDate, setEditableDate] = useState(todayDateFormated);
+  const [editableTitle, setEditableTitle] = useState<string>(title);
+  const [editableDescription, setEditableDescription] = useState<string>(description);
+  const [editableDate, setEditableDate] = useState<string>(todayDateFormated);
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();

@@ -3,7 +3,7 @@ import { styles } from './styles';
 import dayjs from 'dayjs';
 
 const TaskLine: React.FC<{
-  id?: string;
+  id: string;
   title: string;
   description: string;
   status: boolean;
@@ -56,7 +56,7 @@ const TaskLine: React.FC<{
         >
           Complete
         </button>
-        <button style={classes.taskButton}>Edit</button>
+        {/* <button style={classes.taskButton}>Edit</button> */}
       </div>
     </div>
   );
